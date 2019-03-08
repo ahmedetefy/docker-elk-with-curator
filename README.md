@@ -1,0 +1,1 @@
+# docker-elk-with-curator
