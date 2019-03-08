@@ -21,6 +21,7 @@ services:
     volumes:
       - ./logstash/config/logstash.yml:/usr/share/logstash/config/logstash.yml:ro
       - ./logstash/pipeline:/usr/share/logstash/pipeline:ro
+      - ./logstash/GeoLite2-City.mmdb:/etc/logstash/GeoLite2-City.mmdb
     ports:
       - "5000:5000"
       - "5044:5044"
