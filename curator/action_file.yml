@@ -16,3 +16,19 @@ actions:
       timestring: '%Y.%m.%d'
       unit: days
       unit_count: 5
+  2:
+    action: delete_indices
+    description: >-
+      Delete indices that are old when size exceeds set space
+    options:
+      continue_if_exception: False
+      disable_action: False
+    filters:
+      - filtertype: pattern
+        kind: prefix
+        value: filebeat-
+      - filtertype: space
+        disk_space: 0.001
+        use_age: True
+        source: name
+        timestring: '%Y.%m.%d'
