@@ -6,6 +6,7 @@ actions:
       Alias indices older than 5 days, with a prefix of filebeat.
     options:
       continue_if_exception: True
+      ignore_empty_list: True
       disable_action: False
     filters:
     - filtertype: pattern
@@ -20,9 +21,11 @@ actions:
   2:
     action: delete_indices
     description: >-
-      Delete indices that are old when size exceeds set space
+      Delete indices that are old when size exceeds set space (disk_space
+      number is in GB)
     options:
       continue_if_exception: True
+      ignore_empty_list: True
       disable_action: False
     filters:
       - filtertype: pattern
