@@ -32,7 +32,7 @@ actions:
         kind: prefix
         value: filebeat-
       - filtertype: space
-        disk_space: 10
+        disk_space: 19
         use_age: True
         source: name
         timestring: '%Y.%m.%d'
