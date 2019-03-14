@@ -10,8 +10,8 @@ actions:
       disable_action: False
     filters:
     - filtertype: pattern
-      kind: prefix
-      value: filebeat-
+      kind: regex
+      value: '^(filebeat-|log-|queue-).*$'
     - filtertype: age
       source: name
       direction: older
@@ -29,8 +29,8 @@ actions:
       disable_action: False
     filters:
       - filtertype: pattern
-        kind: prefix
-        value: filebeat-
+        kind: regex
+        value: '^(filebeat-|log-|queue-).*$'
       - filtertype: space
         disk_space: 19
         use_age: True
